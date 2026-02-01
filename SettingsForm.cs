@@ -101,7 +101,7 @@ namespace PS3BluMote
 
         private void cbHibernation_CheckedChanged(object sender, EventArgs e)
         {
-            remote.hibernationEnabled = cbHibernation.Checked;
+            if (remote != null) remote.hibernationEnabled = cbHibernation.Checked;
         }
 
         private void cbSms_CheckedChanged(object sender, EventArgs e)
@@ -326,14 +326,14 @@ namespace PS3BluMote
 
             if (timerRepeat.Enabled)
             {
-                if (DebugLog.isLogging) DebugLog.write("Keys repeat send off: { " + String.Join(",", keyboard.lastKeysDown.ToArray()) + " }");
+                if (DebugLog.isLogging && keyboard.lastKeysDown != null) DebugLog.write("Keys repeat send off: { " + String.Join(",", keyboard.lastKeysDown.ToArray()) + " }");
 
                 timerRepeat.Enabled = false;
                 timerRepeat.Interval = int.Parse(txtRepeatDelay.Text);
                 return;
             }
 
-            if (DebugLog.isLogging) DebugLog.write("Keys up: { " + String.Join(",", keyboard.lastKeysDown.ToArray()) + " }");
+            if (DebugLog.isLogging && keyboard.lastKeysDown != null) DebugLog.write("Keys up: { " + String.Join(",", keyboard.lastKeysDown.ToArray()) + " }");
 
             keyboard.releaseLastKeys();
         }

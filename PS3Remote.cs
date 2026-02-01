@@ -45,6 +45,10 @@ namespace PS3BluMote
         private Button lastButton = Button.Angle;
         private bool isButtonDown = false;
         private bool _hibernationEnabled;
+        private Func<string, bool> deviceFilter =>
+            n =>
+            n.ToUpperInvariant().StartsWith(@"BTHENUM\") &&
+            n.ToUpperInvariant().Contains($"_VID&0002{vendorId:X4}_PID&{productId:X4}");
 
         private byte _batteryLife = 100;
 
@@ -127,6 +131,10 @@ namespace PS3BluMote
 
         public void connect()
         {
+            //enable device if it was not enabled in timerHibernation_Elapsed procedure due to the program shutting down
+            HardwareAPI.EnableDevice(deviceFilter);
+
+            if (_hibernationEnabled) timerHibernation.Enabled = true;
             timerFindRemote.Enabled = true;
         }
 
@@ -192,7 +200,7 @@ namespace PS3BluMote
 
                     if (BatteryLifeChanged != null) BatteryLifeChanged(this, new EventArgs());
                 }
-                
+
                 if (_hibernationEnabled) timerHibernation.Enabled = true;
 
                 hidRemote.Read(readButtonData); //Read next button pressed.
@@ -208,11 +216,15 @@ namespace PS3BluMote
 
             hidRemote = null;
 
+            if (_hibernationEnabled) timerHibernation.Enabled = true;
+
             timerFindRemote.Enabled = true; //Try to reconnect.
         }
 
         private void timerFindRemote_Elapsed(object sender, ElapsedEventArgs e)
         {
+            timerFindRemote.Enabled = false;
+
             if (hidRemote == null)
             {
                 if (DebugLog.isLogging) DebugLog.write("Searching for remote");
@@ -233,37 +245,34 @@ namespace PS3BluMote
                     }
 
                     hidRemote.Read(readButtonData);
-
-                    timerFindRemote.Enabled = false;
                 }
-            }
-            else
-            {
-                timerFindRemote.Enabled = false;
+                else
+                {
+                    timerFindRemote.Enabled = true;
+                }
             }
         }
 
         private void timerHibernation_Elapsed(object sender, ElapsedEventArgs e)
         {
-            /*if (DebugLog.isLogging) DebugLog.write("Attempting to hibernate remote");
+            timerHibernation.Enabled = false;
+
+            if (DebugLog.isLogging) DebugLog.write("Attempting to hibernate remote");
 
             try
             {
-                HardwareAPI.DisableDevice(n => n.ToUpperInvariant().Contains
-                    ("_VID&0002054C_PID&0306"), true);
+                HardwareAPI.DisableDevice(deviceFilter);
 
                 System.Threading.Thread.Sleep(1500);
 
-                HardwareAPI.DisableDevice(n => n.ToUpperInvariant().Contains
-                    ("_VID&0002054C_PID&0306"), false);
+                HardwareAPI.EnableDevice(deviceFilter);
             }
             catch (Exception ex)
             {
                 if (DebugLog.isLogging) DebugLog.write("Unable to hibernate remote:" + ex.Message);
             }
 
-            timerFindRemote.Enabled = true;*/
-            timerHibernation.Enabled = false;
+            timerFindRemote.Enabled = true;
         }
 
         public class ButtonData : EventArgs

@@ -140,7 +140,17 @@ string Enumerator,
 
 
 
-        public static void DisableDevice(Func<string, bool> filter, bool disable = true)
+        public static void EnableDevice(Func<string, bool> filter)
+        {
+            EnableDisableDevice(filter, disable: false);
+        }
+
+        public static void DisableDevice(Func<string, bool> filter)
+        {
+            EnableDisableDevice(filter, disable: true);
+        }
+
+        private static void EnableDisableDevice(Func<string, bool> filter, bool disable)
         {
             IntPtr info = IntPtr.Zero;
             Guid NullGuid = Guid.Empty;
