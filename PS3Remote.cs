@@ -235,6 +235,8 @@ namespace PS3BluMote
 
                 if (hidRemote != null)
                 {
+                    if (_hibernationEnabled) timerHibernation.Enabled = true;
+
                     if (DebugLog.isLogging) DebugLog.write("Remote found");
 
                     hidRemote.OpenDevice();
