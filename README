@@ -1,4 +1,4 @@
-PS3BluMote  -  Copyright (c) 2012 Ben Barron
+PS3BluMote  -  Copyright (c) 2012—2026 Ben Barron, midenok, 7orlum
 
 (Formally named "PS3 Remote Application")
 
@@ -90,11 +90,7 @@ and everytime you press the button it will open the application.
 
 ---> The hibernation feature is disabled, is there any way to save battery use?
 
-Many people have reported a program called Ps3RemoteSleep works to disconnect the
-remote. It is a program that you can assign a keyboard shortcut to (see the above
-question) and assign a button on your remote to execute it to disable the remote.
-
-Ps3RemoteSleep is available here: http://ps3remotesleep.codeplex.com/
+Hibernation was fixed in version 2.0.5.
 
 
 ---> Do other remotes work?
@@ -128,7 +124,7 @@ and Build the project.
 
 LICENCE:
 
-Copyright (c) 2012 Ben Barron
+Copyright (c) 2012—2026 Ben Barron, midenok, 7orlum
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 
