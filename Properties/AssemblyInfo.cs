@@ -30,9 +30,9 @@ using System.Resources;
 [assembly: AssemblyTitle("PS3BluMote")]
 [assembly: AssemblyDescription("Allows use of the Sony PS3 Bluetooth remote control (and compatible remotes) within Windows.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ben Barron")]
+[assembly: AssemblyCompany("Ben Barron, midenok, 7orlum")]
 [assembly: AssemblyProduct("PS3BluMote")]
-[assembly: AssemblyCopyright("Copyright © Ben Barron 2025")]
+[assembly: AssemblyCopyright("Copyright © Ben Barron, midenok, 7orlum 2012—2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -54,6 +54,6 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.3.1")]
-[assembly: AssemblyFileVersion("2.0.3.1")]
+[assembly: AssemblyVersion("2.0.5")]
+[assembly: AssemblyFileVersion("2.0.5")]
 [assembly: NeutralResourcesLanguageAttribute("en-GB")]

@@ -53,6 +53,10 @@ namespace PS3BluMote
 
             InitializeComponent();
 
+            var assembly = Assembly.GetExecutingAssembly();
+            lblCopyright.Text = $@"{assembly.GetCustomAttribute<AssemblyTitleAttribute>().Title} v{assembly.GetCustomAttribute<AssemblyFileVersionAttribute>().Version}
+{assembly.GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright}";
+
             ListViewItem lvItem;
             foreach (PS3Remote.Button button in Enum.GetValues(typeof(PS3Remote.Button)))
             {

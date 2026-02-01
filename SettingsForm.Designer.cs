@@ -238,7 +238,7 @@ namespace PS3BluMote
             this.tabSettings.Location = new System.Drawing.Point(4, 29);
             this.tabSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(15);
             this.tabSettings.Size = new System.Drawing.Size(1172, 983);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
@@ -290,9 +290,9 @@ namespace PS3BluMote
             this.lblCopyright.Location = new System.Drawing.Point(132, 642);
             this.lblCopyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(227, 40);
+            this.lblCopyright.Size = new System.Drawing.Size(102, 40);
             this.lblCopyright.TabIndex = 5;
-            this.lblCopyright.Text = "PS3BluMote v2.03+ (midenok).\r\nCopyright © Ben Barron 2012.";
+            this.lblCopyright.Text = "PS3BluMote.\r\nCopyright ";
             // 
             // llblOpenFolder
             // 
@@ -330,7 +330,7 @@ namespace PS3BluMote
             this.gbAdvanced.Location = new System.Drawing.Point(130, 294);
             this.gbAdvanced.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbAdvanced.Name = "gbAdvanced";
-            this.gbAdvanced.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.gbAdvanced.Padding = new System.Windows.Forms.Padding(9);
             this.gbAdvanced.Size = new System.Drawing.Size(387, 328);
             this.gbAdvanced.TabIndex = 2;
             this.gbAdvanced.TabStop = false;
@@ -421,7 +421,7 @@ namespace PS3BluMote
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SettingsForm";
-            this.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.Padding = new System.Windows.Forms.Padding(9);
             this.Text = "PS3BluMote configuration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
             this.Shown += new System.EventHandler(this.SettingsForm_Shown);
