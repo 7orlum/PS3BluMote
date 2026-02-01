@@ -19,7 +19,7 @@ namespace PS3BluMote.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -105,7 +105,7 @@ namespace PS3BluMote.Properties {
         ///		&lt;button name=&quot;Angle&quot; repeat=&quot;false&quot;&gt;&lt;/button&gt;
         ///		&lt;button name=&quot;Subtitle&quot; repeat=&quot;false&quot;&gt;S&lt;/button&gt;
         ///		&lt;button name=&quot;Clear&quot; repeat=&quot;false&quot;&gt;&lt;/button&gt;
-        ///		&lt;button name=&quot;Time&quot; repeat=&quot;false&quot;&gt;Le [rest of string was truncated]&quot;;.
+        ///		&lt;button name=&quot;Time&quot; rep [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string settings {
             get {
